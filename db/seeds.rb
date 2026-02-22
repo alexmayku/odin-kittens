@@ -7,3 +7,28 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Kitten.destroy_all
+
+names = [
+  "Mochi",
+  "Luna",
+  "Pixel",
+  "Beans",
+  "Nimbus",
+  "Peaches",
+  "Miso",
+  "Poppy",
+  "Otis",
+  "Clover"
+]
+
+names.each do |name|
+  Kitten.create!(
+    name: name,
+    age: rand(1..12),
+    cuteness: rand(7..10)
+  )
+end
+
+puts "Seeded #{Kitten.count} very cute kittens 🐱"
